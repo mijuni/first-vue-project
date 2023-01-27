@@ -1,26 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <!--props headline als data property-->
+  <HeadingComponent :headline="headline" />
+  <!--ausführen-->
+  <main><TodoComponent /></main>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+//import HeadingComponent from "@/components/HeadingComponent";
+// component use local - Importieren, registrieren, ausführen
+import TodoComponent from "@/components/TodoComponent";
 
 export default {
   name: "App",
+  data() {
+    return {
+      // im parent component data property erstellen
+      headline: "Todo App",
+    };
+  },
   components: {
-    HelloWorld,
+    //registrieren
+    TodoComponent,
   },
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
